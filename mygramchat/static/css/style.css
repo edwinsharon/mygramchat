@@ -1,0 +1,38 @@
+.mainheader{
+    background-color: black;
+    height: 150px;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+
+}
+.main{
+    display: flex;
+   
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+.mainnav{
+    width: 20%;
+    background-color: black;
+    height: 100vh;
+    margin-top: 5px;
+    border-radius: 2%;
+    
+}
+.mainfeed{
+    height: 600px;
+    width: 600px;
+    background-color: darkgrey;
+    margin-top: 25px;
+    margin-left: 20%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
