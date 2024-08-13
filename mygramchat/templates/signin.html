@@ -1,13 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/signin.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="master">
-        
+        <div class="login">
+            <h1>Mygramchat</h1>
+            <form action="" method="post" >
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" style="height: 50px; width: 250px; border-radius: 5%; border: black 5px solid;">
+                <br>
+                <input type="text" name="password" placeholder="password" style="height: 50px; width: 250px; margin-top: 5%; border-radius: 5%; border: black 5px solid;">
+                <br>
+                <input type="button" value="submit" class="button">
+                <a href="">forgotpassword</a>
+                <br>
+                <a href=""> signup</a>
+            </form>
+        </div>
     </div>
 </body>
 </html>

@@ -14,7 +14,6 @@
 }
 .main{
     display: flex;
-   
     flex-direction: row;
     flex-wrap: wrap;
     
@@ -25,9 +24,26 @@
     height: 100vh;
     margin-top: 5px;
     border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
+
+.mainnav a{
+text-decoration: none;
+color: white;
+display: flex;
+
+}
 .mainfeed{
+    width: 70%;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+}
+.feed{
     height: 600px;
     width: 600px;
     background-color: darkgrey;
@@ -35,6 +51,5 @@
     margin-left: 20%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 2%;
-    overflow: scroll;
-
+    padding-left: 10%;
 }

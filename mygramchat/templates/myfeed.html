@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="mainheader">
+        <h1>Mygramchat</h1>
+    </div>
+    <div class="main">
+        <div class="mainnav">
+            <h3>{{ user.username }}</h3>
+            <h4 ><a href="{% url 'index' %}">FEED</a></h1>
+            <h1><a href="">my feed</a></h1>
+        </div>
+        <div class="mainfeed">
+            {% for feed in feeds %}
+            <div class="feed">
+               <img src="{{ feed.image.url }}" alt="">
+               <p>{{ feed.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
