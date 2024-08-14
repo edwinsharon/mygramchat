@@ -9,6 +9,8 @@ def index(request):
     feeds= Feedpost.objects.all().order_by('-id')
     if 'username' not in request.session:
         return redirect("usersignin")
+    for i in feeds:
+        print(i.feedimage)
     return render(request,"index.html",{"feeds":feeds})
 def usersignin(request):
     if 'username' in request.session:
@@ -60,10 +62,16 @@ def myfeed(request):
 
 def newpost(request):
     if request.POST:
-        feedimage= request.FILES.get("feedimage")  
+        feedimage = request.FILES.get('feedimage')
+        print(feedimage)
         description= request.POST.get("description")
         user = request.user
         probj = Feedpost(feedimage=feedimage, description=description,User=user)
         probj.save()
         return redirect("index")
     return render(request,"newpost.html")
+
+def logoutuser(request):
+    logout(request)
+    request.session.flush()
+    return redirect('index')

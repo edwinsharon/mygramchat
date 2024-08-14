@@ -9,6 +9,7 @@ urlpatterns = [
     path('createuser',views.usersignup,name="createuser"),
     path('myfeed',views.myfeed,name="myfeed"),
     path('newpost',views.newpost,name="newpost"),
+    path('logoutuser',views.logoutuser,name="logoutuser"),
 
 ]
 if settings.DEBUG:

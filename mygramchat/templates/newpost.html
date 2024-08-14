@@ -15,7 +15,7 @@
 
         <div class="login">
             <h1>Mygramchat</h1>
-            <form action="{% url 'newpost' %}" method="post" >
+            <form action="{% url 'newpost' %}" method="post" enctype="multipart/form-data" >
                 {% csrf_token %}
                 <label for="feedimage">choose  image</label>
                 <br>
