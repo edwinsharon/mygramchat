@@ -5,9 +5,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('',views.index,name="index"),
-    path('signin',views.usersignin,name="usersignin"),
-    path('createuser',views.usersignup,name="usersignup"),
-    path('myfeed',views.myfeed,name="myfeed")
+    path('usersignin',views.usersignin,name="usersignin"),
+    path('createuser',views.usersignup,name="createuser"),
+    path('myfeed',views.myfeed,name="myfeed"),
+    path('newpost',views.newpost,name="newpost"),
 
 ]
 if settings.DEBUG:

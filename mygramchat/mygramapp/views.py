@@ -7,8 +7,8 @@ from .models import*
 # Create your views here.
 def index(request):
     feeds= Feedpost.objects.all().order_by('-id')
-        # if 'username' in request.session:
-        #     return redirect('usersignin')
+    if 'username' not in request.session:
+        return redirect("usersignin")
     return render(request,"index.html",{"feeds":feeds})
 def usersignin(request):
     if 'username' in request.session:
@@ -49,10 +49,21 @@ def usersignup(request):
             user = User.objects.create_user(username=username, email=email, password=password)    
             user.save()
             messages.success(request,"account created successfully")
-            return render(request, "createuser.html")
+            return redirect("usersignin")
     return render(request,"createuser.html") 
 
 def myfeed(request):
     user = request.user
-    feeds= Feedpost.objects.filter(user=user).order_by('-id')
+    feeds = Feedpost.objects.filter(User=user).order_by('-id')
     return render(request,"myfeed.html",{"feeds":feeds})
+
+
+def newpost(request):
+    if request.POST:
+        feedimage= request.FILES.get("feedimage")  
+        description= request.POST.get("description")
+        user = request.user
+        probj = Feedpost(feedimage=feedimage, description=description,User=user)
+        probj.save()
+        return redirect("index")
+    return render(request,"newpost.html")

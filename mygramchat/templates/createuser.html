@@ -14,19 +14,19 @@
     <div class="master">
         <div class="login">
             <h1>Mygramchat</h1>
-            <form action="" method="post" >
+            <form action="{% url 'createuser' %}" method="post" >
                 {% csrf_token %}
                 <input type="text" name="username" placeholder="Username" style="height: 50px; width: 250px; border-radius: 5%; border: black 5px solid;">
                 <br>
                 <br>
                 <input type="email" name="email" placeholder="email" style="height: 50px; width: 250px; border-radius: 5%; border: black 5px solid;">
                 <br>
-                <input type="text" name="password" placeholder="password" style="height: 50px; width: 250px; margin-top: 5%; border-radius: 5%; border: black 5px solid;">
+                <input type="password" name="password" placeholder="password" style="height: 50px; width: 250px; margin-top: 5%; border-radius: 5%; border: black 5px solid;">
                 <br>
-                <input type="text" name="confirmpassword" placeholder="confirm password" style="height: 50px; width: 250px; margin-top: 5%; border-radius: 5%; border: black 5px solid;">
+                <input type="password" name="confirmpassword" placeholder="confirm password" style="height: 50px; width: 250px; margin-top: 5%; border-radius: 5%; border: black 5px solid;">
                 <br>
 
-                <input type="button" value="submit" class="button">
+                <input type="submit" value="submit" class="button">
             </form>
         </div>
     </div>

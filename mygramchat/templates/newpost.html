@@ -12,14 +12,19 @@
 </head>
 <body>
     <div class="master">
+
         <div class="login">
             <h1>Mygramchat</h1>
             <form action="{% url 'newpost' %}" method="post" >
                 {% csrf_token %}
-                <input type="file" name="feedimage">
-                <input type="text" name="description" placeholder="caption">
-                <input type="button" value="POST" class="button">
-            </form>
+                <label for="feedimage">choose  image</label>
+                <br>
+                <input type="file" name="feedimage" id="feedimage">
+                <br>
+                <input type="text" name="description" id="description" style="margin-top: 2%; border:black 5px solid; width:150px; height:30px; border-radius:5%;">
+                <br>
+                <input type="submit" value="POST" style="margin-top: 2%; border:none; background-color: rgb(83, 83, 243); width:50px; height:30px; border-radius:2%;">
+           </form>
         </div>
     </div>
 </body>

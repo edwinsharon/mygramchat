@@ -20,6 +20,7 @@
             <h3>{{ user.username }}</h3>
             <h4 ><a href="{% url 'index' %}">FEED</a></h1>
             <h1><a href="">my feed</a></h1>
+            <h4><a href="{% url 'newpost' %}">Add Post</a></h4>
         </div>
         <div class="mainfeed">
             {% for feed in feeds %}
